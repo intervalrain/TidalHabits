@@ -66,12 +66,15 @@ Feature/Habit/
 
 ## 開始使用
 
+> 📖 **快速指南**: 查看 [QUICK_START.md](QUICK_START.md) 獲取詳細的命令列操作說明
+
 ### 環境需求
 
 - **Xcode**: 15.0+
 - **iOS**: 16.0+
 - **Swift**: 5.9+
 - **macOS**: Ventura 13.0+
+- **工具**: xcodegen (建議安裝: `brew install xcodegen`)
 
 ### 安裝步驟
 
@@ -82,25 +85,61 @@ git clone git@github.com:intervalrain/TidalHabits.git
 cd TidalHabits
 ```
 
-2. 開啟 Xcode 專案
+2. 生成 Xcode 專案
 
 ```bash
-open TidalHabits/TidalHabits.xcodeproj
+# 使用腳本（推薦）
+./scripts/rebuild-project.sh
+
+# 或手動執行
+xcodegen generate
+sed -i '' 's/objectVersion = 77;/objectVersion = 56;/' TidalHabits.xcodeproj/project.pbxproj
 ```
 
-3. 選擇目標裝置或模擬器
+3. 開啟 Xcode 專案
 
-4. 建置並執行 (`⌘R`)
+```bash
+open TidalHabits.xcodeproj
+```
+
+4. 選擇目標裝置或模擬器
+
+5. 建置並執行 (`⌘R`)
+
+### 快速指令
+
+```bash
+# 執行測試
+./scripts/test.sh
+
+# 建置並執行 App（模擬器）
+./scripts/run.sh
+
+# 清理專案
+./scripts/clean.sh
+```
 
 ### 執行測試
 
 ```bash
+# 使用腳本（推薦）
+./scripts/test.sh
+
 # 在 Xcode 中執行所有測試
 ⌘U
 
-# 或使用命令列
-xcodebuild test -scheme TidalHabits -destination 'platform=iOS Simulator,name=iPhone 15'
+# 或使用完整命令列
+xcodebuild \
+  -project TidalHabits.xcodeproj \
+  -scheme TidalHabits \
+  -destination 'platform=iOS Simulator,name=iPhone 15 Pro' \
+  -only-testing:TidalHabitsTests \
+  test
 ```
+
+📚 **詳細指南**:
+- [Xcode CLI 完整操作指南](docs/dev/notes/xcode-cli-guide.md)
+- [快速開始指南](QUICK_START.md)
 
 ## 開發規範
 
