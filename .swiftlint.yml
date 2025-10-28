@@ -1,0 +1,185 @@
+# SwiftLint Configuration for TidalHabits
+# https://github.com/realm/SwiftLint
+
+# Paths
+included:
+  - src
+  - test
+
+excluded:
+  - Pods
+  - Carthage
+  - .build
+  - DerivedData
+  - TidalHabits/TidalHabits.xcodeproj
+  - TidalHabits/TidalHabits/Preview Content
+  - Generated
+
+# Disabled Rules
+disabled_rules:
+  - trailing_whitespace
+  - todo
+  - line_length # 使用 warning/error threshold 替代
+
+# Opt-in Rules
+opt_in_rules:
+  - empty_count
+  - empty_string
+  - explicit_init
+  - first_where
+  - force_unwrapping
+  - contains_over_first_not_nil
+  - sorted_first_last
+  - closure_spacing
+  - redundant_nil_coalescing
+  - array_init
+  - attributes
+  - closure_end_indentation
+  - closure_parameter_position
+  - collection_alignment
+  - conditional_returns_on_newline
+  - discouraged_object_literal
+  - explicit_acl
+  - explicit_top_level_acl
+  - extension_access_modifier
+  - fallthrough
+  - fatal_error_message
+  - file_header
+  - file_name
+  - file_types_order
+  - implicit_return
+  - joined_default_parameter
+  - let_var_whitespace
+  - literal_expression_end_indentation
+  - modifier_order
+  - multiline_arguments
+  - multiline_function_chains
+  - multiline_literal_brackets
+  - multiline_parameters
+  - multiline_parameters_brackets
+  - number_separator
+  - operator_usage_whitespace
+  - overridden_super_call
+  - override_in_extension
+  - pattern_matching_keywords
+  - prefer_self_type_over_type_of_self
+  - private_action
+  - private_outlet
+  - prohibited_super_call
+  - quick_discouraged_call
+  - quick_discouraged_focused_test
+  - quick_discouraged_pending_test
+  - redundant_type_annotation
+  - required_enum_case
+  - single_test_class
+  - sorted_imports
+  - strict_fileprivate
+  - switch_case_on_newline
+  - toggle_bool
+  - trailing_closure
+  - unneeded_parentheses_in_closure_argument
+  - vertical_parameter_alignment_on_call
+  - vertical_whitespace_closing_braces
+  - vertical_whitespace_opening_braces
+  - yoda_condition
+
+# Rule Configurations
+line_length:
+  warning: 120
+  error: 150
+  ignores_comments: true
+  ignores_urls: true
+  ignores_function_declarations: false
+  ignores_interpolated_strings: true
+
+function_body_length:
+  warning: 50
+  error: 100
+
+function_parameter_count:
+  warning: 5
+  error: 8
+
+type_body_length:
+  warning: 300
+  error: 500
+
+file_length:
+  warning: 500
+  error: 1000
+  ignore_comment_only_lines: true
+
+cyclomatic_complexity:
+  warning: 10
+  error: 20
+  ignores_case_statements: true
+
+nesting:
+  type_level:
+    warning: 2
+    error: 3
+  function_level:
+    warning: 3
+    error: 5
+
+identifier_name:
+  min_length:
+    warning: 2
+    error: 1
+  max_length:
+    warning: 50
+    error: 60
+  excluded:
+    - id
+    - x
+    - y
+    - z
+    - i
+    - j
+    - k
+
+type_name:
+  min_length:
+    warning: 3
+    error: 2
+  max_length:
+    warning: 50
+    error: 60
+
+large_tuple:
+  warning: 3
+  error: 4
+
+trailing_comma:
+  mandatory_comma: true
+
+vertical_whitespace:
+  max_empty_lines: 2
+
+# Custom Rules
+custom_rules:
+  no_print:
+    name: "No Print Statements"
+    regex: "print\\("
+    message: "使用 Logger 替代 print() 進行日誌記錄"
+    severity: warning
+
+  no_force_try:
+    name: "No Force Try"
+    regex: "try!"
+    message: "避免使用 try!,應該適當處理錯誤"
+    severity: error
+
+  no_objc_inference:
+    name: "No Implicit @objc Inference"
+    regex: "@objc\\s+(?:public|private|internal)\\s+(?:var|func|init)"
+    message: "避免不必要的 @objc,除非需要 Objective-C 互操作性"
+    severity: warning
+
+# Reporters
+reporter: "xcode"
+
+# Analyzer Rules
+analyzer_rules:
+  - unused_declaration
+  - unused_import

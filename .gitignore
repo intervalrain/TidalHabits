@@ -1,0 +1,239 @@
+# TidalHabits .gitignore
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Xcode
+## Build generated
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## User settings
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcworkspace
+!default.xcworkspace
+
+## Compatibility with Xcode 8 and earlier
+*.xcscmblueprint
+*.xccheckout
+
+## Compatibility with Xcode 9 and earlier
+*.xcuserstate
+*.xcworkspacedata
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+## Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+
+# CocoaPods (如果使用)
+Pods/
+*.podspec
+Podfile.lock
+.cocoapods/
+
+# Carthage (如果使用)
+Carthage/Build/
+Carthage/Checkouts/
+
+# fastlane (如果使用)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+fastlane/.env
+fastlane/Deliverfile
+fastlane/metadata
+fastlane/Snapfile
+fastlane/Fastfile.swift
+
+# Code Injection
+iOSInjectionProject/
+
+# Tuist (如果使用)
+.tuist/
+Derived/
+Dependencies/
+*.xcodeproj
+*.xcworkspace
+
+# Swift
+## Playgrounds
+*.playground
+
+## Testing
+*.gcda
+*.gcno
+xcov/
+coverage/
+*.profdata
+
+# IDEs
+## VSCode
+.vscode/
+*.code-workspace
+
+## AppCode
+.idea/
+*.iml
+*.ipr
+*.iws
+
+## Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+## Vim
+*~
+*.swp
+*.swo
+*.swn
+
+# Documentation
+docs/_build/
+docs/.doctrees/
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+tmp/
+temp/
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# OS specific
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Development
+.tags
+.tags_sorted_by_file
+tags
+TAGS
+
+# Secrets & Certificates
+*.p12
+*.mobileprovision
+*.cer
+*.certSigningRequest
+secrets/
+credentials/
+
+# TestFlight & App Store
+*.itmsp/
+*.pkg
+
+# Archive
+*.zip
+*.tar.gz
+*.rar
+
+# Custom
+.build-scripts/
+.scripts/
+local/
+
+# CI/CD
+.github/workflows/*.local.yml
+
+# Database
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.db-shm
+*.db-wal
+
+# Generated files
+Generated/
+*.generated.swift
+
+# Localization
+*.strings.old
+*.xliff.old
+
+# Screenshots for App Store
+screenshots/original/
+
+# Node.js (如果使用腳本工具)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Python (如果使用腳本)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+
+# Ruby (如果使用 fastlane)
+.bundle/
+vendor/bundle/
+
+# Sensitive data
+config.local.*
+*.key
+*.pem
+*.pfx
+
+# Performance & Profiling
+*.trace
+*.dtps
+
+# Custom scripts output
+output/
+dist/
+.claude/

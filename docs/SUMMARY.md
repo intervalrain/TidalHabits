@@ -29,8 +29,12 @@ TidalHabits/
 | [README.md](../README.md) | 專案概述、安裝指南、開發規範摘要 | ✅ 完成 |
 | [architecture.md](./architecture.md) | Clean Architecture + CQRS 詳細說明 | ✅ 完成 |
 | [development-standards.md](./development-standards.md) | 完整開發規範與 TDD 流程 | ✅ 完成 |
+| [git-flow.md](./git-flow.md) | Git Flow、版本控制、CI/CD、Milestone | ✅ 完成 |
+| [git-flow-cheatsheet.md](./git-flow-cheatsheet.md) | Git Flow 快速參考卡 | ✅ 完成 |
 | [project-structure.md](./project-structure.md) | 目錄結構與命名慣例 | ✅ 完成 |
 | [getting-started.md](./getting-started.md) | 快速開始指南 | ✅ 完成 |
+| [milestones.md](./milestones.md) | Milestone 與 Phase 規劃 | ✅ 完成 |
+| [CHANGELOG.md](../CHANGELOG.md) | 版本更新記錄 | ✅ 完成 |
 
 ### ✅ 3. 功能規格文件
 

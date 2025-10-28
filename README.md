@@ -78,7 +78,7 @@ Feature/Habit/
 1. Clone 專案
 
 ```bash
-git clone https://github.com/your-username/TidalHabits.git
+git clone git@github.com:intervalrain/TidalHabits.git
 cd TidalHabits
 ```
 
@@ -178,12 +178,22 @@ Closes #123
 
 ## 文件
 
+### 核心文件
 - [架構設計](docs/architecture.md) - Clean Architecture + CQRS 詳細說明
-- [開發規範](docs/development-standards.md) - 編碼規範、Git 工作流程、測試規範
+- [開發規範](docs/development-standards.md) - 編碼規範、TDD 流程、測試規範
+- [Git Flow](docs/git-flow.md) - 分支策略、版本控制、CI/CD、Milestone 規劃
+- [專案結構](docs/project-structure.md) - 目錄組織與命名慣例
+- [快速開始](docs/getting-started.md) - 開發指南與實作範例
+- [Milestone 規劃](docs/milestones.md) - 版本計畫與 Issue 追蹤
+
+### 功能規格
 - [功能概述](docs/features/overview.md) - 應用程式功能總覽
 - [習慣管理規格](docs/features/habit/spec.md) - 習慣功能詳細規格
 - [番茄鐘規格](docs/features/checkin/spec.md) - 番茄鐘功能詳細規格
 - [設定規格](docs/features/settings/spec.md) - 設定與獎勵功能規格
+- [統計規格](docs/features/statistics/spec.md) - 統計分析功能規格
+- [行事曆規格](docs/features/calendar/spec.md) - 行事曆功能規格
+- [首頁規格](docs/features/home/spec.md) - 首頁功能規格
 
 ## 多語系支援
 
@@ -259,9 +269,9 @@ Closes #123
 
 ## 聯絡方式
 
-- **專案連結**: [https://github.com/your-username/TidalHabits](https://github.com/your-username/TidalHabits)
-- **問題回報**: [Issues](https://github.com/your-username/TidalHabits/issues)
-- **功能建議**: [Discussions](https://github.com/your-username/TidalHabits/discussions)
+- **專案連結**: [https://github.com/intervalrain/TidalHabits](https://github.com/intervalrain/TidalHabits)
+- **問題回報**: [Issues](https://github.com/intervalrain/TidalHabits/issues)
+- **功能建議**: [Discussions](https://github.com/intervalrain/TidalHabits/discussions)
 
 ## 致謝
 

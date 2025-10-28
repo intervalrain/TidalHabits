@@ -1,0 +1,111 @@
+# TidalHabits .gitattributes
+
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Swift files
+*.swift text diff=swift
+
+# Xcode project files
+*.pbxproj binary merge=union
+*.xcworkspacedata binary merge=union
+*.xcscheme text
+*.xcschememanagement text
+
+# Property list files
+*.plist text
+*.strings text
+*.stringsdict text
+
+# JSON files
+*.json text
+
+# YAML files
+*.yml text
+*.yaml text
+
+# Markdown files
+*.md text diff=markdown
+
+# Shell scripts
+*.sh text eol=lf
+
+# Documentation
+*.txt text
+*.rtf diff=astextplain
+*.md text diff=markdown
+*.adoc text
+*.textile text
+*.mustache text
+*.csv text
+*.tab text
+*.tsv text
+*.sql text
+
+# Graphics
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+*.eps binary
+*.ai binary
+*.pdf binary
+
+# Video
+*.mov binary
+*.mp4 binary
+*.m4v binary
+*.avi binary
+
+# Audio
+*.mp3 binary
+*.m4a binary
+*.wav binary
+*.aiff binary
+
+# Fonts
+*.ttf binary
+*.otf binary
+*.eot binary
+*.woff binary
+*.woff2 binary
+
+# Archives
+*.zip binary
+*.tar binary
+*.gz binary
+*.7z binary
+*.rar binary
+
+# Compiled files
+*.o binary
+*.a binary
+*.dylib binary
+*.framework binary
+
+# iOS specific
+*.xcassets binary
+*.car binary
+*.nib binary
+*.storyboard text
+*.xib text
+
+# Swift Package Manager
+Package.swift text
+Package.resolved text linguist-generated=true
+
+# Localization
+*.lproj/*.strings text
+
+# Configuration files
+.gitignore text
+.gitattributes text
+.editorconfig text
+
+# CI/CD
+.github/** text
+
+# Documentation generators
+Doxyfile text
