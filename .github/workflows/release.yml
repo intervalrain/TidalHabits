@@ -24,19 +24,10 @@ jobs:
         with:
           xcode-version: '15.0'
 
-      - name: Install xcodegen
-        run: brew install xcodegen
-
-      - name: Generate Xcode Project
-        run: |
-          xcodegen generate
-          # Fix project format version for Xcode 15.0
-          sed -i '' 's/objectVersion = 77;/objectVersion = 56;/' TidalHabits.xcodeproj/project.pbxproj
-
-      - name: Get Version from project.yml
+      - name: Get Version from Xcode Project
         id: version
         run: |
-          VERSION=$(grep "MARKETING_VERSION" project.yml | awk '{print $2}' | tr -d '"')
+          VERSION=$(xcodebuild -project TidalHabits.xcodeproj -showBuildSettings | grep MARKETING_VERSION | awk '{print $3}' | head -1)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Version: $VERSION"
 

@@ -26,20 +26,11 @@ jobs:
         with:
           xcode-version: '15.0'
 
-      - name: Install xcodegen
-        run: brew install xcodegen
-
-      - name: Generate Xcode Project
-        run: |
-          xcodegen generate
-          # Fix project format version for Xcode 15.0
-          sed -i '' 's/objectVersion = 77;/objectVersion = 56;/' TidalHabits.xcodeproj/project.pbxproj
-
       - name: Cache DerivedData
         uses: actions/cache@v3
         with:
           path: ~/Library/Developer/Xcode/DerivedData
-          key: ${{ runner.os }}-deriveddata-${{ hashFiles('**/project.yml') }}
+          key: ${{ runner.os }}-deriveddata-${{ hashFiles('**/*.xcodeproj/project.pbxproj') }}
           restore-keys: |
             ${{ runner.os }}-deriveddata-
 

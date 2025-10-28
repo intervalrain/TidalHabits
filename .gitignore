@@ -85,8 +85,6 @@ iOSInjectionProject/
 .tuist/
 Derived/
 Dependencies/
-*.xcodeproj
-*.xcworkspace
 
 # Swift
 ## Playgrounds
