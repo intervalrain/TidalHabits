@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF4B99CE2EB05B2B0085BD1C /* TidalHabitsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B99CD2EB05B2B0085BD1C /* TidalHabitsApp.swift */; };
+		EF4B99D02EB05B2B0085BD1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B99CF2EB05B2B0085BD1C /* ContentView.swift */; };
+		EF4B99D22EB05B2D0085BD1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF4B99D12EB05B2D0085BD1C /* Assets.xcassets */; };
+		EF4B99D52EB05B2D0085BD1C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF4B99D42EB05B2D0085BD1C /* Preview Assets.xcassets */; };
+		EF4B99D72EB05B2D0085BD1C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B99D62EB05B2D0085BD1C /* Persistence.swift */; };
+		EF4B99DA2EB05B2D0085BD1C /* TidalHabits.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF4B99D82EB05B2D0085BD1C /* TidalHabits.xcdatamodeld */; };
+		EF4B99E42EB05B2D0085BD1C /* TidalHabitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B99E32EB05B2D0085BD1C /* TidalHabitsTests.swift */; };
+		EF4B99EE2EB05B2D0085BD1C /* TidalHabitsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B99ED2EB05B2D0085BD1C /* TidalHabitsUITests.swift */; };
+		EF4B99F02EB05B2D0085BD1C /* TidalHabitsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B99EF2EB05B2D0085BD1C /* TidalHabitsUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF4B99E02EB05B2D0085BD1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF4B99C22EB05B2B0085BD1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF4B99C92EB05B2B0085BD1C;
+			remoteInfo = TidalHabits;
+		};
+		EF4B99EA2EB05B2D0085BD1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF4B99C22EB05B2B0085BD1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF4B99C92EB05B2B0085BD1C;
+			remoteInfo = TidalHabits;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF4B99CA2EB05B2B0085BD1C /* TidalHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TidalHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF4B99CD2EB05B2B0085BD1C /* TidalHabitsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidalHabitsApp.swift; sourceTree = "<group>"; };
+		EF4B99CF2EB05B2B0085BD1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF4B99D12EB05B2D0085BD1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF4B99D42EB05B2D0085BD1C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EF4B99D62EB05B2D0085BD1C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		EF4B99D92EB05B2D0085BD1C /* TidalHabits.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TidalHabits.xcdatamodel; sourceTree = "<group>"; };
+		EF4B99DF2EB05B2D0085BD1C /* TidalHabitsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TidalHabitsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF4B99E32EB05B2D0085BD1C /* TidalHabitsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidalHabitsTests.swift; sourceTree = "<group>"; };
+		EF4B99E92EB05B2D0085BD1C /* TidalHabitsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TidalHabitsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF4B99ED2EB05B2D0085BD1C /* TidalHabitsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidalHabitsUITests.swift; sourceTree = "<group>"; };
+		EF4B99EF2EB05B2D0085BD1C /* TidalHabitsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidalHabitsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF4B99C72EB05B2B0085BD1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF4B99DC2EB05B2D0085BD1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF4B99E62EB05B2D0085BD1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF4B99C12EB05B2B0085BD1C = {
+			isa = PBXGroup;
+			children = (
+				EF4B99CC2EB05B2B0085BD1C /* TidalHabits */,
+				EF4B99E22EB05B2D0085BD1C /* TidalHabitsTests */,
+				EF4B99EC2EB05B2D0085BD1C /* TidalHabitsUITests */,
+				EF4B99CB2EB05B2B0085BD1C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF4B99CB2EB05B2B0085BD1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF4B99CA2EB05B2B0085BD1C /* TidalHabits.app */,
+				EF4B99DF2EB05B2D0085BD1C /* TidalHabitsTests.xctest */,
+				EF4B99E92EB05B2D0085BD1C /* TidalHabitsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF4B99CC2EB05B2B0085BD1C /* TidalHabits */ = {
+			isa = PBXGroup;
+			children = (
+				EF4B99CD2EB05B2B0085BD1C /* TidalHabitsApp.swift */,
+				EF4B99CF2EB05B2B0085BD1C /* ContentView.swift */,
+				EF4B99D12EB05B2D0085BD1C /* Assets.xcassets */,
+				EF4B99D62EB05B2D0085BD1C /* Persistence.swift */,
+				EF4B99D82EB05B2D0085BD1C /* TidalHabits.xcdatamodeld */,
+				EF4B99D32EB05B2D0085BD1C /* Preview Content */,
+			);
+			path = TidalHabits;
+			sourceTree = "<group>";
+		};
+		EF4B99D32EB05B2D0085BD1C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EF4B99D42EB05B2D0085BD1C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF4B99E22EB05B2D0085BD1C /* TidalHabitsTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF4B99E32EB05B2D0085BD1C /* TidalHabitsTests.swift */,
+			);
+			path = TidalHabitsTests;
+			sourceTree = "<group>";
+		};
+		EF4B99EC2EB05B2D0085BD1C /* TidalHabitsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF4B99ED2EB05B2D0085BD1C /* TidalHabitsUITests.swift */,
+				EF4B99EF2EB05B2D0085BD1C /* TidalHabitsUITestsLaunchTests.swift */,
+			);
+			path = TidalHabitsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF4B99C92EB05B2B0085BD1C /* TidalHabits */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF4B99F32EB05B2D0085BD1C /* Build configuration list for PBXNativeTarget "TidalHabits" */;
+			buildPhases = (
+				EF4B99C62EB05B2B0085BD1C /* Sources */,
+				EF4B99C72EB05B2B0085BD1C /* Frameworks */,
+				EF4B99C82EB05B2B0085BD1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TidalHabits;
+			productName = TidalHabits;
+			productReference = EF4B99CA2EB05B2B0085BD1C /* TidalHabits.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF4B99DE2EB05B2D0085BD1C /* TidalHabitsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF4B99F62EB05B2D0085BD1C /* Build configuration list for PBXNativeTarget "TidalHabitsTests" */;
+			buildPhases = (
+				EF4B99DB2EB05B2D0085BD1C /* Sources */,
+				EF4B99DC2EB05B2D0085BD1C /* Frameworks */,
+				EF4B99DD2EB05B2D0085BD1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF4B99E12EB05B2D0085BD1C /* PBXTargetDependency */,
+			);
+			name = TidalHabitsTests;
+			productName = TidalHabitsTests;
+			productReference = EF4B99DF2EB05B2D0085BD1C /* TidalHabitsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF4B99E82EB05B2D0085BD1C /* TidalHabitsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF4B99F92EB05B2D0085BD1C /* Build configuration list for PBXNativeTarget "TidalHabitsUITests" */;
+			buildPhases = (
+				EF4B99E52EB05B2D0085BD1C /* Sources */,
+				EF4B99E62EB05B2D0085BD1C /* Frameworks */,
+				EF4B99E72EB05B2D0085BD1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF4B99EB2EB05B2D0085BD1C /* PBXTargetDependency */,
+			);
+			name = TidalHabitsUITests;
+			productName = TidalHabitsUITests;
+			productReference = EF4B99E92EB05B2D0085BD1C /* TidalHabitsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF4B99C22EB05B2B0085BD1C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					EF4B99C92EB05B2B0085BD1C = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					EF4B99DE2EB05B2D0085BD1C = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = EF4B99C92EB05B2B0085BD1C;
+					};
+					EF4B99E82EB05B2D0085BD1C = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = EF4B99C92EB05B2B0085BD1C;
+					};
+				};
+			};
+			buildConfigurationList = EF4B99C52EB05B2B0085BD1C /* Build configuration list for PBXProject "TidalHabits" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF4B99C12EB05B2B0085BD1C;
+			packageReferences = (
+				EF4B99FC2EB05D6B0085BD1C /* XCRemoteSwiftPackageReference "Inject" */,
+			);
+			productRefGroup = EF4B99CB2EB05B2B0085BD1C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF4B99C92EB05B2B0085BD1C /* TidalHabits */,
+				EF4B99DE2EB05B2D0085BD1C /* TidalHabitsTests */,
+				EF4B99E82EB05B2D0085BD1C /* TidalHabitsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF4B99C82EB05B2B0085BD1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF4B99D52EB05B2D0085BD1C /* Preview Assets.xcassets in Resources */,
+				EF4B99D22EB05B2D0085BD1C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF4B99DD2EB05B2D0085BD1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF4B99E72EB05B2D0085BD1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF4B99C62EB05B2B0085BD1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF4B99D72EB05B2D0085BD1C /* Persistence.swift in Sources */,
+				EF4B99DA2EB05B2D0085BD1C /* TidalHabits.xcdatamodeld in Sources */,
+				EF4B99D02EB05B2B0085BD1C /* ContentView.swift in Sources */,
+				EF4B99CE2EB05B2B0085BD1C /* TidalHabitsApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF4B99DB2EB05B2D0085BD1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF4B99E42EB05B2D0085BD1C /* TidalHabitsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF4B99E52EB05B2D0085BD1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF4B99F02EB05B2D0085BD1C /* TidalHabitsUITestsLaunchTests.swift in Sources */,
+				EF4B99EE2EB05B2D0085BD1C /* TidalHabitsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF4B99E12EB05B2D0085BD1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF4B99C92EB05B2B0085BD1C /* TidalHabits */;
+			targetProxy = EF4B99E02EB05B2D0085BD1C /* PBXContainerItemProxy */;
+		};
+		EF4B99EB2EB05B2D0085BD1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF4B99C92EB05B2B0085BD1C /* TidalHabits */;
+			targetProxy = EF4B99EA2EB05B2D0085BD1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EF4B99F12EB05B2D0085BD1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF4B99F22EB05B2D0085BD1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF4B99F42EB05B2D0085BD1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TidalHabits/Preview Content\"";
+				DEVELOPMENT_TEAM = VM6B4D9NL4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "\"-Xlinker -interposable\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rainspace.TidalHabits;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF4B99F52EB05B2D0085BD1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TidalHabits/Preview Content\"";
+				DEVELOPMENT_TEAM = VM6B4D9NL4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rainspace.TidalHabits;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EF4B99F72EB05B2D0085BD1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VM6B4D9NL4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rainspace.TidalHabitsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TidalHabits.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TidalHabits";
+			};
+			name = Debug;
+		};
+		EF4B99F82EB05B2D0085BD1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VM6B4D9NL4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rainspace.TidalHabitsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TidalHabits.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TidalHabits";
+			};
+			name = Release;
+		};
+		EF4B99FA2EB05B2D0085BD1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VM6B4D9NL4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rainspace.TidalHabitsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TidalHabits;
+			};
+			name = Debug;
+		};
+		EF4B99FB2EB05B2D0085BD1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VM6B4D9NL4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rainspace.TidalHabitsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TidalHabits;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF4B99C52EB05B2B0085BD1C /* Build configuration list for PBXProject "TidalHabits" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF4B99F12EB05B2D0085BD1C /* Debug */,
+				EF4B99F22EB05B2D0085BD1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF4B99F32EB05B2D0085BD1C /* Build configuration list for PBXNativeTarget "TidalHabits" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF4B99F42EB05B2D0085BD1C /* Debug */,
+				EF4B99F52EB05B2D0085BD1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF4B99F62EB05B2D0085BD1C /* Build configuration list for PBXNativeTarget "TidalHabitsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF4B99F72EB05B2D0085BD1C /* Debug */,
+				EF4B99F82EB05B2D0085BD1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF4B99F92EB05B2D0085BD1C /* Build configuration list for PBXNativeTarget "TidalHabitsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF4B99FA2EB05B2D0085BD1C /* Debug */,
+				EF4B99FB2EB05B2D0085BD1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EF4B99FC2EB05D6B0085BD1C /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCVersionGroup section */
+		EF4B99D82EB05B2D0085BD1C /* TidalHabits.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EF4B99D92EB05B2D0085BD1C /* TidalHabits.xcdatamodel */,
+			);
+			currentVersion = EF4B99D92EB05B2D0085BD1C /* TidalHabits.xcdatamodel */;
+			path = TidalHabits.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EF4B99C22EB05B2B0085BD1C /* Project object */;
+}
