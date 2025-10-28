@@ -28,12 +28,12 @@ TidalHabits/
 |-----|------|------|
 | [README.md](../README.md) | 專案概述、安裝指南、開發規範摘要 | ✅ 完成 |
 | [architecture.md](./architecture.md) | Clean Architecture + CQRS 詳細說明 | ✅ 完成 |
-| [development-standards.md](./development-standards.md) | 完整開發規範與 TDD 流程 | ✅ 完成 |
-| [git-flow.md](./git-flow.md) | Git Flow、版本控制、CI/CD、Milestone | ✅ 完成 |
-| [git-flow-cheatsheet.md](./git-flow-cheatsheet.md) | Git Flow 快速參考卡 | ✅ 完成 |
+| [development-standards.md](./dev/notes/development-standards.md) | 完整開發規範與 TDD 流程 | ✅ 完成 |
+| [git-flow.md](./dev/github/git-flow.md) | Git Flow、版本控制、CI/CD、Milestone | ✅ 完成 |
+| [git-flow-cheatsheet.md](./dev/github/git-flow-cheatsheet.md) | Git Flow 快速參考卡 | ✅ 完成 |
 | [project-structure.md](./project-structure.md) | 目錄結構與命名慣例 | ✅ 完成 |
-| [getting-started.md](./getting-started.md) | 快速開始指南 | ✅ 完成 |
-| [milestones.md](./milestones.md) | Milestone 與 Phase 規劃 | ✅ 完成 |
+| [getting-started.md](./dev/notes/getting-started.md) | 快速開始指南 | ✅ 完成 |
+| [milestones.md](./dev/milestones/phases/milestones.md) | Milestone 與 Phase 規劃 | ✅ 完成 |
 | [CHANGELOG.md](../CHANGELOG.md) | 版本更新記錄 | ✅ 完成 |
 
 ### ✅ 3. 功能規格文件
@@ -272,9 +272,9 @@ Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`
 ## 下一步行動
 
 ### 立即行動
-1. ✅ 閱讀 [getting-started.md](./getting-started.md)
+1. ✅ 閱讀 [getting-started.md](./dev/notes/getting-started.md)
 2. ✅ 熟悉 [architecture.md](./architecture.md)
-3. ✅ 了解 [development-standards.md](./development-standards.md)
+3. ✅ 了解 [development-standards.md](./dev/notes/development-standards.md)
 
 ### 開始實作
 4. 建立 Core 模組 (DDD 基礎)
@@ -312,9 +312,9 @@ Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`
 ### 專案文件
 - [README](../README.md)
 - [架構設計](./architecture.md)
-- [開發規範](./development-standards.md)
+- [開發規範](./dev/notes/development-standards.md)
 - [專案結構](./project-structure.md)
-- [快速開始](./getting-started.md)
+- [快速開始](./dev/notes/getting-started.md)
 - [功能概述](./features/overview.md)
 
 ### 外部資源

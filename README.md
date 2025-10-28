@@ -121,7 +121,7 @@ xcodebuild test -scheme TidalHabits -destination 'platform=iOS Simulator,name=iP
    └─ Failed → 返回步驟 1
 ```
 
-詳細開發規範請參閱 [development-standards.md](docs/development-standards.md)
+詳細開發規範請參閱 [development-standards.md](docs/dev/notes/development-standards.md)
 
 ### 程式碼風格
 
@@ -180,11 +180,11 @@ Closes #123
 
 ### 核心文件
 - [架構設計](docs/architecture.md) - Clean Architecture + CQRS 詳細說明
-- [開發規範](docs/development-standards.md) - 編碼規範、TDD 流程、測試規範
-- [Git Flow](docs/git-flow.md) - 分支策略、版本控制、CI/CD、Milestone 規劃
+- [開發規範](docs/dev/notes/development-standards.md) - 編碼規範、TDD 流程、測試規範
+- [Git Flow](docs/dev/github/git-flow.md) - 分支策略、版本控制、CI/CD、Milestone 規劃
 - [專案結構](docs/project-structure.md) - 目錄組織與命名慣例
-- [快速開始](docs/getting-started.md) - 開發指南與實作範例
-- [Milestone 規劃](docs/milestones.md) - 版本計畫與 Issue 追蹤
+- [快速開始](docs/dev/notes/getting-started.md) - 開發指南與實作範例
+- [Milestone 規劃](docs/dev/milestones/phases/milestones.md) - 版本計畫與 Issue 追蹤
 
 ### 功能規格
 - [功能概述](docs/features/overview.md) - 應用程式功能總覽

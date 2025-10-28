@@ -321,11 +321,11 @@ Presentation → Application → Domain ← Infrastructure
 - Projects: https://github.com/intervalrain/TidalHabits/projects
 
 ### 文件
-- [README](../README.md)
-- [Git Flow](./git-flow.md)
-- [開發規範](./development-standards.md)
-- [快速開始](./getting-started.md)
-- [Milestone 規劃](./milestones.md)
+- [README](../../../README.md)
+- [Git Flow](../github/git-flow.md)
+- [開發規範](development-standards.md)
+- [快速開始](getting-started.md)
+- [Milestone 規劃](../milestones/phases/milestones.md)
 
 ## 結論
 
