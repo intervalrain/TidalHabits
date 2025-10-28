@@ -1,5 +1,5 @@
 {
-  "project": "TidalHabits.xcodeproj",
+  "workspace": "TidalHabits.xcworkspace",
   "scheme": "TidalHabits",
   "destination": "platform=iOS Simulator,name=iPhone 15,OS=17.5",
   "configuration": "Debug"

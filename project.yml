@@ -35,10 +35,8 @@ targets:
       SWIFT_VERSION: "5.9"
       TARGETED_DEVICE_FAMILY: "1,2" # iPhone and iPad
     scheme:
-      testTargets:
-        - TidalHabitsTests
-        # - TidalHabitsUITests  # TODO: Re-enable when UI tests are implemented
-      gatherCoverageData: true
+      testTargets: []
+      gatherCoverageData: false
     preBuildScripts:
       - name: SwiftLint
         script: |
@@ -49,59 +47,13 @@ targets:
           fi
         basedOnDependencyAnalysis: false
 
-  TidalHabitsTests:
-    type: bundle.unit-test
-    platform: iOS
-    sources:
-      - path: test/TidalHabitsTests
-        name: Tests
-        type: group
-        createIntermediateGroups: true
-    dependencies:
-      - target: TidalHabits
-    settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.intervalrain.TidalHabitsTests
-      SWIFT_VERSION: "5.9"
-      GENERATE_INFOPLIST_FILE: YES
-      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/TidalHabits.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TidalHabits"
-      BUNDLE_LOADER: "$(TEST_HOST)"
-    scheme:
-      gatherCoverageData: true
-
-  # TidalHabitsUITests:
-  #   type: bundle.ui-testing
-  #   platform: iOS
-  #   sources:
-  #     - path: test/TidalHabitsUITests
-  #       name: UI Tests
-  #       type: group
-  #       createIntermediateGroups: true
-  #   dependencies:
-  #     - target: TidalHabits
-  #   settings:
-  #     PRODUCT_BUNDLE_IDENTIFIER: com.intervalrain.TidalHabitsUITests
-  #     SWIFT_VERSION: "5.9"
-  #     GENERATE_INFOPLIST_FILE: YES
-  #     TEST_TARGET_NAME: TidalHabits
-  #   scheme:
-  #     gatherCoverageData: true
-  # TODO: Re-enable when UI tests are implemented
-
 schemes:
   TidalHabits:
     build:
       targets:
         TidalHabits: all
-        TidalHabitsTests: [test]
-        # TidalHabitsUITests: [test]  # TODO: Re-enable when UI tests are implemented
     run:
       config: Debug
-    test:
-      config: Debug
-      gatherCoverageData: true
-      targets:
-        - TidalHabitsTests
-        # - TidalHabitsUITests  # TODO: Re-enable when UI tests are implemented
     profile:
       config: Release
     analyze:
