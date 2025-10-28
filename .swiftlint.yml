@@ -19,7 +19,6 @@ excluded:
 disabled_rules:
   - trailing_whitespace
   - todo
-  - line_length # 使用 warning/error threshold 替代
 
 # Opt-in Rules
 opt_in_rules:
