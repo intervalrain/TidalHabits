@@ -24,10 +24,19 @@ jobs:
         with:
           xcode-version: '15.0'
 
-      - name: Get Version from Info.plist
+      - name: Install xcodegen
+        run: brew install xcodegen
+
+      - name: Generate Xcode Project
+        run: |
+          xcodegen generate
+          # Fix project format version for Xcode 15.0
+          sed -i '' 's/objectVersion = 77;/objectVersion = 56;/' TidalHabits.xcodeproj/project.pbxproj
+
+      - name: Get Version from project.yml
         id: version
         run: |
-          VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" TidalHabits/TidalHabits/Info.plist)
+          VERSION=$(grep "MARKETING_VERSION" project.yml | awk '{print $2}' | tr -d '"')
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Version: $VERSION"
 
@@ -44,7 +53,7 @@ jobs:
         if: steps.check_tag.outputs.exists == 'false'
         run: |
           xcodebuild clean build \
-            -project TidalHabits/TidalHabits.xcodeproj \
+            -project TidalHabits.xcodeproj \
             -scheme TidalHabits \
             -configuration Release \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' \
@@ -55,9 +64,10 @@ jobs:
         if: steps.check_tag.outputs.exists == 'false'
         run: |
           xcodebuild test \
-            -project TidalHabits/TidalHabits.xcodeproj \
+            -project TidalHabits.xcodeproj \
             -scheme TidalHabits \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' \
+            -only-testing:TidalHabitsTests \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO
 

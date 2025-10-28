@@ -31,12 +31,13 @@ targets:
       ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
       DEVELOPMENT_TEAM: "" # Add your team ID here
       CODE_SIGN_STYLE: Automatic
+      CODE_SIGN_IDENTITY: "-"  # Ad-hoc signing for simulator
       SWIFT_VERSION: "5.9"
       TARGETED_DEVICE_FAMILY: "1,2" # iPhone and iPad
     scheme:
       testTargets:
         - TidalHabitsTests
-        - TidalHabitsUITests
+        # - TidalHabitsUITests  # TODO: Re-enable when UI tests are implemented
       gatherCoverageData: true
     preBuildScripts:
       - name: SwiftLint
@@ -67,23 +68,24 @@ targets:
     scheme:
       gatherCoverageData: true
 
-  TidalHabitsUITests:
-    type: bundle.ui-testing
-    platform: iOS
-    sources:
-      - path: test/TidalHabitsUITests
-        name: UI Tests
-        type: group
-        createIntermediateGroups: true
-    dependencies:
-      - target: TidalHabits
-    settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.intervalrain.TidalHabitsUITests
-      SWIFT_VERSION: "5.9"
-      GENERATE_INFOPLIST_FILE: YES
-      TEST_TARGET_NAME: TidalHabits
-    scheme:
-      gatherCoverageData: true
+  # TidalHabitsUITests:
+  #   type: bundle.ui-testing
+  #   platform: iOS
+  #   sources:
+  #     - path: test/TidalHabitsUITests
+  #       name: UI Tests
+  #       type: group
+  #       createIntermediateGroups: true
+  #   dependencies:
+  #     - target: TidalHabits
+  #   settings:
+  #     PRODUCT_BUNDLE_IDENTIFIER: com.intervalrain.TidalHabitsUITests
+  #     SWIFT_VERSION: "5.9"
+  #     GENERATE_INFOPLIST_FILE: YES
+  #     TEST_TARGET_NAME: TidalHabits
+  #   scheme:
+  #     gatherCoverageData: true
+  # TODO: Re-enable when UI tests are implemented
 
 schemes:
   TidalHabits:
@@ -91,7 +93,7 @@ schemes:
       targets:
         TidalHabits: all
         TidalHabitsTests: [test]
-        TidalHabitsUITests: [test]
+        # TidalHabitsUITests: [test]  # TODO: Re-enable when UI tests are implemented
     run:
       config: Debug
     test:
@@ -99,7 +101,7 @@ schemes:
       gatherCoverageData: true
       targets:
         - TidalHabitsTests
-        - TidalHabitsUITests
+        # - TidalHabitsUITests  # TODO: Re-enable when UI tests are implemented
     profile:
       config: Release
     analyze:

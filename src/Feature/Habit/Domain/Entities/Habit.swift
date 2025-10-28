@@ -1,10 +1,3 @@
-//
-//  Habit.swift
-//  TidalHabits
-//
-//  Created on 2025-10-28.
-//
-
 import Foundation
 
 /// Habit Entity - Represents a user habit in the domain

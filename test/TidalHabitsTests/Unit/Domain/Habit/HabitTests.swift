@@ -1,10 +1,3 @@
-//
-//  HabitTests.swift
-//  TidalHabitsTests
-//
-//  Created on 2025-10-28.
-//
-
 import XCTest
 @testable import TidalHabits
 
