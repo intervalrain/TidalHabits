@@ -2,7 +2,7 @@
 
 > 潮汐般穩定的習慣養成 iOS App 🌊
 
-**最後更新**: 2025-10-28
+**最後更新**: 2025-10-29
 
 ---
 
@@ -25,31 +25,44 @@
 
 - **專案名稱**: TidalHabits
 - **類型**: iOS 自律習慣養成 App
-- **架構**: Clean Architecture + CQRS
-- **組織方式**: Feature-based
+- **架構**: Hybrid Architecture (Xcode 標準 + Clean Architecture + CQRS)
+- **組織方式**: Feature-based (Vertical Slices)
 - **開發方法**: TDD (Test-Driven Development)
+- **命名慣例**: .NET Style (I prefix, Async suffix, Dto suffix)
 - **目標平台**: iOS 16.0+, 未來支援 Apple Watch
 - **Repository**: [https://github.com/intervalrain/TidalHabits](https://github.com/intervalrain/TidalHabits)
 
 ### 專案願景
 
-TidalHabits 採用 Clean Architecture + CQRS 模式開發，以 feature-based 方式組織程式碼，確保高可維護性、可測試性與可擴展性。透過番茄鐘機制與獎勵系統，幫助使用者建立並維持良好習慣。
+TidalHabits 採用 **Hybrid 架構**，結合 Xcode 標準專案結構與 Clean Architecture + CQRS 設計模式。專案內部採用 .NET 風格的命名慣例 (I prefix for protocols, Async suffix for async methods, Dto suffix)，以 Feature-based Vertical Slices 方式組織程式碼，確保高可維護性、可測試性與可擴展性。透過番茄鐘機制與獎勵系統，幫助使用者建立並維持良好習慣。
 
 ### 核心特點
 
-- ✅ **完整的架構設計**: Clean Architecture + CQRS
+- ✅ **Hybrid 架構設計**: Xcode 標準 + Clean Architecture + CQRS
+- ✅ **.NET 風格慣例**: 熟悉的命名與模式 (ICommand, IQuery, Async, Dto)
 - ✅ **明確的開發規範**: TDD 流程與品質標準
 - ✅ **詳盡的功能規格**: 每個 Feature 都有完整文件
-- ✅ **清晰的專案結構**: Feature-based 模組化組織
+- ✅ **Vertical Slices**: Feature-based 模組化組織，高內聚低耦合
 - ✅ **專業的開發流程**: 規格 → 測試 → 實作 → Review → Commit
+- ✅ **Xcode 完全相容**: 與 Xcode/Sweetpad 無縫整合
 
 ---
 
 ## 架構設計
 
+### Hybrid Architecture 概述
+
+TidalHabits 採用 **Hybrid 架構模式**，結合：
+- **Xcode 標準專案結構**: 所有原始碼位於 `TidalHabits/` 目錄下
+- **Clean Architecture 分層**: Domain, Application, Infrastructure, Presentation
+- **CQRS 模式**: Commands (寫入) 與 Queries (讀取) 分離
+- **.NET 風格命名**: ICommand, IQuery, Async suffix, Dto suffix
+
+> 完整架構設計請參考 [architecture.md](docs/architecture.md)
+
 ### Clean Architecture 分層
 
-TidalHabits 採用經典的 Clean Architecture 四層架構:
+TidalHabits 內部採用經典的 Clean Architecture 四層架構:
 
 ```
 ┌─────────────────────────────────────┐
@@ -218,51 +231,131 @@ View ← ViewModel ← QueryHandler ← Repository ← DataSource
 ### 目錄結構總覽
 
 ```
-TidalHabits/
-├── src/                              # 原始碼
-│   ├── App/                          # 應用程式進入點
-│   │   ├── TidalHabitsApp.swift     # App 主體
-│   │   ├── ContentView.swift        # 根視圖
-│   │   └── AppDelegate.swift        # App 生命週期 (如需要)
-│   │
-│   ├── Core/                         # 核心共用模組
-│   │   ├── Domain/                  # DDD 基礎建構
-│   │   │   ├── Entity.swift        # Entity 基礎協定
-│   │   │   ├── ValueObject.swift   # Value Object 基礎協定
-│   │   │   ├── AggregateRoot.swift # Aggregate Root 基礎
-│   │   │   ├── DomainEvent.swift   # 領域事件
-│   │   │   └── Result.swift        # Result 型別
-│   │   │
-│   │   ├── Extensions/              # Swift 擴充功能
-│   │   │   ├── Date+Extensions.swift
-│   │   │   ├── String+Extensions.swift
-│   │   │   ├── TimeInterval+Extensions.swift
-│   │   │   └── View+Extensions.swift
-│   │   │
-│   │   └── Utilities/               # 工具類別
-│   │       ├── Logger.swift
-│   │       ├── DateFormatter.swift
-│   │       └── Validators.swift
-│   │
-│   ├── Feature/                     # 功能模組 (Feature-based)
-│   │   ├── CheckIn/                 # 番茄鐘功能
-│   │   ├── Habit/                   # 習慣管理
-│   │   ├── Statistic/               # 統計分析
-│   │   ├── Reward/                  # 獎勵系統
-│   │   └── User/                    # 使用者管理
-│   │
-│   └── Shared/                      # 共用元件
-│       ├── Component/               # 可重用 UI 元件
-│       ├── Localization/            # 多語系資源
-│       ├── Navigation/              # 導航邏輯
-│       └── Theme/                   # 主題與樣式
+TidalHabits/                          # 專案根目錄
 │
-├── test/                            # 測試檔案
+├── TidalHabits/                      # Xcode 標準專案目錄 (所有原始碼)
+│   ├── TidalHabitsApp.swift         # App Entry Point
+│   ├── ContentView.swift             # Root View
+│   ├── Persistence.swift             # CoreData Stack
+│   │
+│   ├── Core/                         # 核心基礎設施 (Shared Kernel)
+│   │   ├── Domain/                  # DDD 基礎建構
+│   │   │   ├── Common/
+│   │   │   │   ├── Entity.swift        # IEntity 基礎協定
+│   │   │   │   ├── ValueObject.swift   # Value Object 基礎
+│   │   │   │   ├── AggregateRoot.swift # Aggregate Root 基礎
+│   │   │   │   └── DomainEvent.swift   # IDomainEvent
+│   │   │   ├── Exceptions/
+│   │   │   │   └── DomainException.swift
+│   │   │   └── Interfaces/
+│   │   │       ├── IRepository.swift    # Generic Repository Interface
+│   │   │       └── IUnitOfWork.swift    # Unit of Work Pattern
+│   │   │
+│   │   ├── Application/             # CQRS 基礎建構
+│   │   │   ├── Common/
+│   │   │   │   ├── ICommand.swift       # Command Interface
+│   │   │   │   ├── IQuery.swift         # Query Interface
+│   │   │   │   ├── ICommandHandler.swift
+│   │   │   │   ├── IQueryHandler.swift
+│   │   │   │   └── Result.swift         # Result<T, Error>
+│   │   │   ├── Behaviours/          # Pipeline Behaviours
+│   │   │   │   ├── ValidationBehaviour.swift
+│   │   │   │   └── LoggingBehaviour.swift
+│   │   │   └── Exceptions/
+│   │   │       └── ApplicationException.swift
+│   │   │
+│   │   ├── Infrastructure/          # 技術基礎設施實作
+│   │   │   ├── Persistence/
+│   │   │   │   ├── AppDbContext.swift   # CoreData Context
+│   │   │   │   ├── BaseRepository.swift # Generic Repository 實作
+│   │   │   │   └── UnitOfWork.swift
+│   │   │   └── Services/
+│   │   │       └── DateTimeService.swift
+│   │   │
+│   │   └── Shared/                  # Cross-cutting concerns
+│   │       ├── Extensions/
+│   │       │   ├── Date+Extensions.swift
+│   │       │   ├── String+Extensions.swift
+│   │       │   └── Collection+Extensions.swift
+│   │       └── Utilities/
+│   │           ├── Logger.swift
+│   │           └── Validator.swift
+│   │
+│   ├── Features/                    # 功能模組 (Vertical Slices)
+│   │   │
+│   │   ├── Habits/                  # Habit Feature
+│   │   │   ├── Domain/
+│   │   │   │   ├── Entities/
+│   │   │   │   │   └── Habit.swift
+│   │   │   │   ├── ValueObjects/
+│   │   │   │   │   ├── HabitName.swift
+│   │   │   │   │   └── HabitIcon.swift
+│   │   │   │   ├── Events/
+│   │   │   │   │   └── HabitCreatedEvent.swift
+│   │   │   │   └── Specifications/
+│   │   │   │       └── ActiveHabitSpec.swift
+│   │   │   │
+│   │   │   ├── Application/
+│   │   │   │   ├── Commands/
+│   │   │   │   │   ├── CreateHabit/
+│   │   │   │   │   │   ├── CreateHabitCommand.swift
+│   │   │   │   │   │   ├── CreateHabitCommandHandler.swift
+│   │   │   │   │   │   └── CreateHabitCommandValidator.swift
+│   │   │   │   │   ├── UpdateHabit/
+│   │   │   │   │   └── DeleteHabit/
+│   │   │   │   │
+│   │   │   │   ├── Queries/
+│   │   │   │   │   ├── GetHabits/
+│   │   │   │   │   │   ├── GetHabitsQuery.swift
+│   │   │   │   │   │   └── GetHabitsQueryHandler.swift
+│   │   │   │   │   └── GetHabitById/
+│   │   │   │   │
+│   │   │   │   └── DTOs/
+│   │   │   │       ├── HabitDto.swift
+│   │   │   │       └── HabitListItemDto.swift
+│   │   │   │
+│   │   │   ├── Infrastructure/
+│   │   │   │   ├── Repositories/
+│   │   │   │   │   └── HabitRepository.swift
+│   │   │   │   └── Configurations/
+│   │   │   │       └── HabitConfiguration.swift
+│   │   │   │
+│   │   │   └── Presentation/
+│   │   │       ├── ViewModels/
+│   │   │       │   ├── HabitListViewModel.swift
+│   │   │       │   └── HabitDetailViewModel.swift
+│   │   │       └── Views/
+│   │   │           ├── HabitListView.swift
+│   │   │           ├── HabitDetailView.swift
+│   │   │           └── Components/
+│   │   │               └── HabitCardView.swift
+│   │   │
+│   │   ├── Pomodoro/                # Pomodoro Feature (相同結構)
+│   │   ├── Statistics/              # Statistics Feature (相同結構)
+│   │   └── Rewards/                 # Rewards Feature (相同結構)
+│   │
+│   └── Shared/                      # 共用 UI 元件 (不屬於 Core)
+│       ├── Components/
+│       │   ├── Buttons/
+│       │   ├── Cards/
+│       │   └── Inputs/
+│       ├── Styles/
+│       │   └── AppTheme.swift
+│       └── Localization/
+│           └── Localizable.strings
+│
+├── TidalHabitsTests/                # 測試專案
 │   ├── Unit/                        # 單元測試
+│   │   ├── Domain/                  # Domain Layer 測試
+│   │   ├── Application/             # Application Layer 測試
+│   │   └── Presentation/            # Presentation Layer 測試
 │   ├── Integration/                 # 整合測試
+│   │   ├── Repositories/
+│   │   └── EndToEnd/
 │   └── UI/                          # UI 測試
 │
 ├── docs/                            # 文件
+│   ├── architecture.md              # 架構設計文件
 │   ├── dev/                         # 開發相關文件
 │   │   ├── github/                  # GitHub 設定
 │   │   ├── notes/                   # 開發筆記
@@ -270,87 +363,156 @@ TidalHabits/
 │   └── features/                    # 功能規格
 │
 ├── scripts/                         # 建置與工具腳本
-├── TidalHabits/                    # Xcode 專案目錄
-├── .github/                        # GitHub 設定
+├── .github/                         # GitHub 設定
 ├── README.md
 ├── CHANGELOG.md
 ├── LICENSE
-└── CLAUDE.md                       # 本文件
+└── CLAUDE.md                        # 本文件
 ```
 
-### Feature 模組結構
+### Feature 模組結構 (Vertical Slices)
 
-每個 Feature 模組遵循 Clean Architecture 四層結構:
+每個 Feature 模組採用 **Vertical Slices** 架構，遵循 Clean Architecture 四層結構:
 
 ```
-Feature/Habit/
-├── Application/          # CQRS Commands & Queries
-│   ├── Commands/        # 寫入操作
-│   ├── Queries/         # 讀取操作
-│   ├── Handlers/        # 處理器
-│   └── DTOs/            # 資料傳輸物件
+Features/Habits/              # Habit Feature (垂直切片)
+├── Domain/                   # 領域模型
+│   ├── Entities/             # 實體
+│   │   └── Habit.swift
+│   ├── ValueObjects/         # 值物件
+│   │   ├── HabitName.swift
+│   │   └── HabitIcon.swift
+│   ├── Events/               # 領域事件
+│   │   └── HabitCreatedEvent.swift
+│   ├── Specifications/       # 領域規格
+│   │   └── ActiveHabitSpec.swift
+│   └── Repositories/         # 倉儲介面 (定義)
+│       └── IHabitRepository.swift
 │
-├── Domain/              # 領域模型
-│   ├── Entities/        # 實體
-│   ├── ValueObjects/    # 值物件
-│   ├── Services/        # 領域服務
-│   ├── Repositories/    # 倉儲介面
-│   └── Errors/          # 領域錯誤
+├── Application/              # CQRS Commands & Queries
+│   ├── Commands/             # 寫入操作 (每個 Command 一個資料夾)
+│   │   ├── CreateHabit/
+│   │   │   ├── CreateHabitCommand.swift
+│   │   │   ├── CreateHabitCommandHandler.swift
+│   │   │   └── CreateHabitCommandValidator.swift
+│   │   ├── UpdateHabit/
+│   │   └── DeleteHabit/
+│   │
+│   ├── Queries/              # 讀取操作 (每個 Query 一個資料夾)
+│   │   ├── GetHabits/
+│   │   │   ├── GetHabitsQuery.swift
+│   │   │   └── GetHabitsQueryHandler.swift
+│   │   └── GetHabitById/
+│   │
+│   └── DTOs/                 # 資料傳輸物件
+│       ├── HabitDto.swift
+│       └── HabitListItemDto.swift
 │
-├── Infrastructure/      # 技術實作
-│   ├── Repositories/    # 倉儲實作
-│   ├── DataSources/     # 資料來源 (CoreData, API)
-│   └── Services/        # 外部服務整合
+├── Infrastructure/           # 技術實作
+│   ├── Repositories/         # 倉儲實作
+│   │   └── HabitRepository.swift
+│   └── Configurations/       # CoreData 設定
+│       └── HabitConfiguration.swift
 │
-└── Presentation/        # UI 層
-    ├── Views/           # SwiftUI 視圖
-    └── ViewModels/      # 視圖模型 (MVVM)
+└── Presentation/             # UI 層 (MVVM)
+    ├── ViewModels/           # 視圖模型
+    │   ├── HabitListViewModel.swift
+    │   └── HabitDetailViewModel.swift
+    └── Views/                # SwiftUI 視圖
+        ├── HabitListView.swift
+        ├── HabitDetailView.swift
+        └── Components/
+            └── HabitCardView.swift
 ```
 
 ### 已建立的 Feature 目錄
 
-- ✅ **CheckIn** - 番茄鐘功能
-- ✅ **Habit** - 習慣管理
-- ✅ **Statistic** - 統計分析
-- ✅ **Reward** - 獎勵系統
-- ✅ **User** - 使用者管理
+Features 位於 `TidalHabits/Features/` 下：
 
-### 檔案命名慣例
+- ✅ **Habits** - 習慣管理
+- ✅ **Pomodoro** - 番茄鐘功能
+- ✅ **Statistics** - 統計分析
+- ✅ **Rewards** - 獎勵系統
 
-#### Entity
-- `Habit.swift`
-- `PomodoroSession.swift`
+> 注意：目錄名稱為複數形式 (Habits, not Habit)，遵循 .NET 慣例
 
-#### Value Object
-- `HabitReminder.swift`
-- `SessionExtension.swift`
+### 命名慣例 (.NET Style)
 
-#### Command/Query
-- `CreateHabitCommand.swift`
-- `GetAllHabitsQuery.swift`
+TidalHabits 採用 **.NET 風格命名慣例**，讓熟悉 .NET 的開發者更容易上手。
 
-#### Handler
-- `CreateHabitCommandHandler.swift`
-- `GetAllHabitsQueryHandler.swift`
+#### Protocol (Interface) 命名 - `I` 前綴
 
-#### Repository
-- Interface: `IHabitRepository.swift`
-- Implementation: `HabitRepository.swift`
+```swift
+protocol IEntity { }
+protocol IRepository { }
+protocol ICommand { }
+protocol IQuery { }
+protocol ICommandHandler { }
+protocol IQueryHandler { }
+protocol IHabitRepository: IRepository { }
+```
 
-#### ViewModel
-- `HabitListViewModel.swift`
-- `PomodoroViewModel.swift`
+#### Class/Struct 命名 - PascalCase
 
-#### View
-- `HabitListView.swift`
-- `PomodoroView.swift`
+| 類型 | 命名範例 |
+|------|---------|
+| **Entity** | `Habit`, `User`, `PomodoroSession` |
+| **Value Object** | `HabitName`, `HabitIcon`, `EmailAddress` |
+| **Command** | `CreateHabitCommand`, `UpdateHabitCommand` |
+| **Query** | `GetHabitsQuery`, `GetHabitByIdQuery` |
+| **Handler** | `CreateHabitCommandHandler`, `GetHabitsQueryHandler` |
+| **Repository** | `HabitRepository`, `UserRepository` |
+| **DTO** | `HabitDto`, `HabitListItemDto` (使用 `Dto` 後綴) |
+| **ViewModel** | `HabitListViewModel`, `HabitDetailViewModel` |
+| **View** | `HabitListView`, `HabitDetailView` |
 
-### Swift 命名慣例
+#### Method 命名 - `Async` 後綴
 
-- **Protocol**: 以 `I` 開頭 (如 `IHabitRepository`) 或使用 `Protocol` 後綴
-- **Class/Struct**: PascalCase
-- **Variables/Functions**: camelCase
-- **Constants**: camelCase 或 UPPER_SNAKE_CASE (全域常數)
+非同步方法使用 `Async` 後綴，類似 .NET 的 `Task<T>`。
+
+```swift
+// Repository methods
+func getByIdAsync(id: UUID) async throws -> Habit?
+func getAllAsync() async throws -> [Habit]
+func addAsync(_ entity: Habit) async throws
+func updateAsync(_ entity: Habit) async throws
+func deleteAsync(_ entity: Habit) async throws
+
+// Handler methods
+func handleAsync(_ command: CreateHabitCommand) async throws -> UUID
+func handleAsync(_ query: GetHabitsQuery) async throws -> [HabitDto]
+
+// ViewModel methods
+func loadHabitsAsync() async
+func createHabitAsync(name: String) async
+```
+
+#### Variables/Functions - camelCase
+
+```swift
+let habitName: String
+var isActive: Bool
+func validateInput() -> Bool
+```
+
+#### Constants
+
+```swift
+// 一般常數 - camelCase
+private let defaultTimeout: TimeInterval = 30.0
+
+// 全域常數 - UPPER_SNAKE_CASE
+static let MAX_HABIT_NAME_LENGTH = 50
+```
+
+### 組織慣例 (.NET Style)
+
+- **Vertical Slices**: 每個 Command/Query 一個資料夾
+  - `Commands/CreateHabit/` (包含 Command, Handler, Validator)
+  - `Queries/GetHabits/` (包含 Query, Handler)
+- **DTO 後綴**: `HabitDto`, `HabitListItemDto`
+- **複數命名**: `Features/Habits/`, `Features/Statistics/`
+- **Interface 前綴**: `ICommand`, `IQuery`, `IRepository`
 
 ### 模組獨立性原則
 
@@ -399,7 +561,7 @@ Feature/Habit/
 #### 測試目錄結構
 
 ```
-test/
+TidalHabitsTests/
 ├── Unit/
 │   ├── Domain/          # Domain Layer 單元測試
 │   ├── Application/     # Application Layer 單元測試
@@ -656,17 +818,20 @@ xcodebuild test -scheme TidalHabits -destination 'platform=iOS Simulator,name=iP
 
 ### 架構優勢
 
+✅ **Hybrid 架構**: 結合 Xcode 標準與 Clean Architecture 優點
 ✅ **高可維護性**: Clean Architecture 確保關注點分離
 ✅ **高可測試性**: TDD 流程，測試覆蓋率高
-✅ **高可擴展性**: Feature-based 易於新增功能
+✅ **高可擴展性**: Vertical Slices 易於新增功能
 ✅ **低耦合**: 模組間依賴清晰，易於替換實作
 ✅ **技術獨立**: 易於替換技術實作 (如從 CoreData 換到 Realm)
+✅ **Xcode 相容**: 與 Xcode/Sweetpad 無縫整合
 
 ### 開發優勢
 
 ✅ **清晰規範**: 完整的開發規範與流程文件
 ✅ **詳細規格**: 每個功能都有明確的規格文件
 ✅ **專業架構**: 符合 .NET Clean Architecture 慣例，易於理解
+✅ **.NET 風格**: 熟悉的命名與模式 (ICommand, Async, Dto)
 ✅ **品質保證**: TDD + Code Review 雙重保障
 
 ### 團隊協作
@@ -677,35 +842,56 @@ xcodebuild test -scheme TidalHabits -destination 'platform=iOS Simulator,name=iP
 
 ### 與 .NET Clean Architecture 的對應
 
-| iOS/Swift | .NET |
-|-----------|------|
-| Feature/ | Modules/ or Features/ |
-| Domain/Entities/ | Domain/Entities/ |
-| Domain/ValueObjects/ | Domain/ValueObjects/ |
-| Domain/Repositories/ | Application/Interfaces/ |
-| Application/Commands/ | Application/Commands/ |
-| Application/Queries/ | Application/Queries/ |
-| Infrastructure/Repositories/ | Infrastructure/Repositories/ |
-| Presentation/Views/ | WebUI/Pages/ or Controllers/ |
-| Presentation/ViewModels/ | WebUI/ViewModels/ |
+TidalHabits 的 Hybrid 架構與 .NET Clean Architecture 高度相似：
 
-#### 差異說明
+| TidalHabits (iOS/Swift) | .NET Clean Architecture |
+|-------------------------|-------------------------|
+| `Core/Domain/Common/Entity.swift` | `Domain/Common/BaseEntity.cs` |
+| `Core/Domain/Interfaces/IRepository.swift` | `Application/Common/Interfaces/IRepository.cs` |
+| `Core/Application/Common/ICommand.swift` | `Application/Common/Interfaces/ICommand.cs` |
+| `Core/Application/Common/IQuery.swift` | `Application/Common/Interfaces/IQuery.cs` |
+| `Core/Infrastructure/Persistence/AppDbContext.swift` | `Infrastructure/Persistence/ApplicationDbContext.cs` |
+| `Core/Infrastructure/Persistence/BaseRepository.swift` | `Infrastructure/Persistence/BaseRepository.cs` |
+| `Features/Habits/` | `Features/Habits/` or `Modules/Habits/` |
+| `Features/Habits/Domain/Entities/` | `Domain/Entities/` |
+| `Features/Habits/Application/Commands/CreateHabit/` | `Features/Habits/Commands/CreateHabit/` |
+| `Features/Habits/Application/Queries/GetHabits/` | `Features/Habits/Queries/GetHabits/` |
+| `Features/Habits/Application/DTOs/HabitDto.swift` | `Application/Common/Models/HabitDto.cs` |
+| `Features/Habits/Infrastructure/Repositories/` | `Infrastructure/Repositories/` |
+| `Features/Habits/Presentation/ViewModels/` | `WebUI/ViewModels/` or `Controllers/` |
+| `Features/Habits/Presentation/Views/` | `WebUI/Pages/` or `Views/` |
 
-1. **UI Framework**:
+#### 主要差異
+
+1. **專案結構**:
+   - .NET: 多個 Project (.csproj)，分層為專案
+   - iOS: 單一 Xcode Project，分層為資料夾
+
+2. **UI Framework**:
    - .NET: ASP.NET Core MVC/Razor Pages/Blazor
    - iOS: SwiftUI
 
-2. **依賴注入**:
-   - .NET: Built-in DI Container
-   - iOS: Protocol-oriented + Manual DI 或使用 Swinject
-
-3. **資料持久化**:
+3. **ORM/資料存取**:
    - .NET: Entity Framework Core
    - iOS: CoreData
 
-4. **非同步模式**:
-   - .NET: async/await (Task<T>)
-   - iOS: async/await (Swift Concurrency)
+4. **依賴注入**:
+   - .NET: Built-in DI Container (Microsoft.Extensions.DependencyInjection)
+   - iOS: Protocol-oriented + Constructor Injection (或使用 Swinject)
+
+5. **非同步模式**:
+   - .NET: `async/await` with `Task<T>`
+   - iOS: `async/await` with Swift Concurrency
+
+#### 相似之處
+
+✅ **命名慣例**: ICommand, IQuery, Async suffix, Dto suffix
+✅ **CQRS 模式**: Commands 與 Queries 分離
+✅ **Vertical Slices**: 每個 Command/Query 一個資料夾
+✅ **Repository Pattern**: Generic + Feature-specific
+✅ **Unit of Work Pattern**: 統一管理 Transaction
+✅ **Result Pattern**: 處理成功/失敗情況
+✅ **依賴方向**: Domain 不依賴任何層
 
 ---
 
@@ -788,14 +974,15 @@ xcodebuild test -scheme TidalHabits -destination 'platform=iOS Simulator,name=iP
 
 ## 總結
 
-TidalHabits 是一個採用專業軟體工程實踐的 iOS 應用程式專案。透過 Clean Architecture + CQRS 架構、TDD 開發流程、Feature-based 模組化組織，確保專案具備高可維護性、可測試性與可擴展性。
+TidalHabits 是一個採用專業軟體工程實踐的 iOS 應用程式專案。透過 **Hybrid 架構** (Xcode 標準 + Clean Architecture + CQRS)、**.NET 風格命名慣例**、**TDD 開發流程**、**Vertical Slices 模組化組織**，確保專案具備高可維護性、可測試性與可擴展性，同時與 Xcode/Sweetpad 完全相容。
 
-**專案已具備開始實作的所有基礎，可以立即開始開發!** 🚀
+**專案架構已完成，已具備開始實作的所有基礎，可以立即開始開發!** 🚀
 
 ---
 
 **TidalHabits - 潮汐般穩定的習慣養成** 🌊
 
 _建立於 2025-10-28_
+_最後更新於 2025-10-29_
 _License: MIT_
 _Author: intervalrain_
