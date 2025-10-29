@@ -26,6 +26,15 @@ class AggregateRoot: Entity {
         _domainEvents.append(event)
     }
 
+    /// Pop all domain events and clear the collection
+    /// Similar to amantinband's PopDomainEvents pattern
+    /// - Returns: Array of domain events, then clears internal collection
+    func popDomainEvents() -> [IDomainEvent] {
+        let events = _domainEvents
+        _domainEvents.removeAll()
+        return events
+    }
+
     /// Clear all domain events (typically called after publishing)
     func clearDomainEvents() {
         _domainEvents.removeAll()
